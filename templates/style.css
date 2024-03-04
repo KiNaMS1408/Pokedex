@@ -1,0 +1,371 @@
+        :root {
+            --timing: 400ms;
+            --rotation: 30deg;
+            --card-bg-color: rgb(197, 14, 14);
+            --footer-bg-color: #333;
+            --footer-text-color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        body {
+            background-color: #ffffff;
+            max-width: 1440px;
+            margin: auto;
+        }
+
+        img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 80%;
+        }
+
+        .littleImg {
+            max-height: unset;
+            max-width: unset;
+            height: 13vh !important;
+        }
+
+        .pokedex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            padding-inline: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .pokemonId {
+            font-size: 0.8em;
+        }
+
+        .he {
+            padding-top: 8px;
+        }
+
+        .showCard {
+            background-color: rgb(168 168 168 / 43%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            left: 0;
+            backdrop-filter: blur(3px);
+        }
+
+        .showCard icon {
+            display: flex;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 8px;
+        }
+
+        .centerText {
+            text-align: center;
+        }
+
+        .icon {
+            font-size: clamp(3vh, 3vh, 5vw);
+            cursor: pointer;
+        }
+
+        .icons {
+            display: flex;
+            gap: 6vh;
+        }
+
+
+        h1 {
+            font-size: 104%;
+        }
+
+        .cardInfos {
+            background-color: white;
+            border-radius: 32px;
+            width: 100%;
+        }
+
+        .card {
+            width: 160px;
+            height: 320px !important;
+            transform-style: preserve-3d !important;
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: center;
+            transition: rotate var(--timing) ease, -webkit-transform var(--timing) ease !important;
+            border-radius: 32px;
+            border-top-right-radius: 0;
+            align-items: center;
+        }
+
+        .bigCard {
+            border-radius: 32px;
+            border-top-right-radius: 0;
+            position: fixed;
+            top: 8vh;
+        }
+
+        .bigCardCenter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pDetail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .PokemonImage {
+            height: 7rem;
+        }
+
+        .bigPokemonImage {
+            height: clamp(28vh, 7vh, 6vw);
+        }
+
+        .pokemonTypes {
+            display: flex;
+            margin: 16px;
+            height: 20%;
+            width: 80%;
+            gap: 16px;
+            justify-content: space-around;
+        }
+
+        .card:hover {
+            rotate: x var(--rotation);
+        }
+
+        .bg-image {
+            position: absolute;
+            z-index: 10;
+            height: 100%;
+            object-fit: cover;
+            object-position: -150px center;
+        }
+
+        .front-image {
+            scale: 1.125;
+            transform-origin: center bottom;
+            opacity: 0;
+            z-index: 100;
+            transition: var(--timing);
+        }
+
+        .front-image {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .card:hover .front-image {
+            opacity: 1;
+            transform: translateY(-6rem) translateZ(-10px);
+            rotate: x calc(var(--rotation) * -1);
+        }
+
+        #scrolling-container {
+            height: 90%;
+            border: 1px solid #ccc;
+            border: none;
+            overflow-x: overlay;
+            text-align: center;
+        }
+
+        #loadMorePokemon {
+            border: 1px green;
+        }
+
+        footer {
+            background-color: var(--footer-bg-color);
+            color: var(--footer-text-color);
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            display: none;
+        }
+
+        nav {
+            width: 100%;
+        }
+
+        .nav-tabs {
+            width: 100%;
+            justify-content: space-around;
+            font-size: large;
+        }
+
+        #nav-contact {
+            height: 30vh;
+        }
+
+        .sizeing {
+            height: 12rem;
+        }
+
+        .flag {
+            height: 32px;
+            width: 40px;
+            border: 1px solid lightgrey;
+        }
+
+        .fixed {
+            position: fixed;
+            cursor: pointer;
+            z-index: 3;
+            top: 8px;
+            margin: 8px;
+        }
+
+        .tab-content {
+            height: 12rem;
+            display: initial;
+        }
+
+        .radar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .height96 {
+            height: 96%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #nav-profile {
+            height: inherit;
+        }
+
+        .stop-scrolling {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .align {
+            display: flex;
+            align-items: center;
+        }
+
+        .bigPokemonTyps img {
+            width: 4rem;
+        }
+
+        .search {
+            margin: 10px;
+            outline: 2px solid #333;
+            outline-offset: -4px;
+            border-radius: .5em;
+            transition: 500ms;
+            box-shadow: 0 0 0 2px #333,
+                0 0 0 4px darkorange,
+                0 0 0 6px #333;
+            color: canvas;
+            background: #ff8c0091;
+            padding: 0.5em 1em;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                background-color: white;
+                outline-offset: 6px;
+                outline-color: white;
+                color: black;
+            }
+        }
+
+        .addButton {
+            margin: 20px;
+            outline: 2px solid #efefef;
+            outline-offset: 6px;
+            border: 0;
+            border-radius: 0.5em;
+            transition: 500ms;
+            box-shadow: 0 0 0 2px gray, 0 0 0 4px burlywood, 0 0 0 6px gray;
+            color: canvas;
+            background-color: darkorange;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+
+        .inline {
+            margin-inline: 41%;
+        }
+
+        @media only screen and (max-width: 430px) {
+            .nav-tabs {
+                flex-direction: column;
+                border-radius: 16px;
+            }
+
+            .bigCard {
+                width: 100%;
+                top: 0;
+                font-size: 16px;
+            }
+
+            .icons {
+                display: flex;
+                justify-content: center;
+                gap: 4rem;
+                background: #a9a9a930;
+                border-radius: 30px;
+                padding-inline: 8px;
+            }
+        }
+
+        @media only screen and (max-width: 300px) {
+            .wrap {
+                flex-direction: column;
+                align-items: center;
+                padd
+            }
+        }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="IMG/flav.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="templates/style.css">
+    <script src="templates/pokedexarray.js"></script>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="templates/rada.js"></script>
+    <title>Pokedex</title>
+
+</head>
+
+<body onload="loadPokemon(); includeHTML()" id="body">
+    <header class="center">
+
+    <img src="IMG/Pokedex.png" alt="">
+    <input type="search" id="search" class="search" minlength="3" onkeyup=" filterPokemon()" placeholder="Search Pokemon">
+    <div>
+        <button id="button" class="d-none">Search</button></div>
+    </header>
+        <div class="fixed" id="flags">
+        <div w3-include-html="templates/flags.html"></div>
+    </div>
+    <div id="pokedex" class="pokedex">
+    </div>
+    <button onclick="loadMorePokemon()" class="addButton inline">Want to see more Pokemon? Click me!</button>
+    <div id="showCard" class="showCard d-none">
+        <div id="bigCard" class="bigCard">
+            <div id="Card" class="bigCardCenter">
+                <h2 id="pokemonId" class="pokemonId he"></h2>
+                <h1 id="pokemonName" class="pDetail"></h1>
+                <div class="align">
+                    <img id="pokemonImage" class="bigPokemonImage" alt="">
+                    <div id="pokemonTypes" class="bigPokemonTyps"></div>
+                </div>
+                <div class="icons">
+                    <div onclick="getPreviousPokemon()" id="arrowleft" class="icon">&lt&lt;</div>
+                    <div onclick="closeCard()" id="backbutton" class="icon">Close</div>
+                    <div onclick="getNextPokemon()" id="arrowright" class="icon">&gt&gt;</div>
+                </div>
+                <div class="cardInfos">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">Daten</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                aria-selected="false">Details</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false">Bewegungen</button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active centerText " id="nav-home" role="tabpanel"
+                            aria-labelledby="nav-home-tab" tabindex="0">
+                            <div class="wrap">
+                                <div class="pDetail">
+                                    <h1>Größe</h1>
+                                    <h1 id="height">11</h1>
+                                </div>
+                                <div class="pDetail">
+                                    <h1>Gewicht</h1>
+                                    <h1 id="weight">97</h1>
+                                    <img id="littleImg" class="littleImg" alt="">
+                                </div>
+                                <div class="pDetail">
+                                    <h1>Erfahung</h1>
+                                    <h1 id="xp">80</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="nav-profile" class="center" role="tabpanel" aria-labelledby="nav-profile-tab"
+                            tabindex="0">
+                            <div class="height96"><canvas id="myChart" class="myChart"></canvas></div>
+                        </div>
+
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                            tabindex="0">
+                            <div id="scrolling-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
